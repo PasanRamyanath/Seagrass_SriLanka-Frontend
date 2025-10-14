@@ -19,7 +19,7 @@ const UserHome = () => {
     const fetchBlogsCount = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:8000/api/blogs/user/${user.user_id}/`,
+          `https://seagrass-backend-d6fuesa6gpe8fnan.centralus-01.azurewebsites.net/api/blogs/user/${user.user_id}/`,
           { headers: { Authorization: `Bearer ${token}` } }
         );
         setBlogsCount(response.data.length);
@@ -32,7 +32,7 @@ const UserHome = () => {
     const fetchRecentComments = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:8000/api/blogs/user/blog_comments/${user.user_id}/`,
+          `https://seagrass-backend-d6fuesa6gpe8fnan.centralus-01.azurewebsites.net/api/blogs/user/blog_comments/${user.user_id}/`,
           { headers: { Authorization: `Bearer ${token}` } }
         );
         setRecentComments(response.data);
@@ -62,7 +62,7 @@ const UserHome = () => {
         toast.error("Please log in to post a blog.");
         return false; // Indicate failure to modal
       }
-      await axios.post("http://localhost:8000/api/blogs/post/", formData, {
+      await axios.post("https://seagrass-backend-d6fuesa6gpe8fnan.centralus-01.azurewebsites.net/api/blogs/post/", formData, {
         headers: {
           "Content-Type": "multipart/form-data",
           Authorization: `Bearer ${token}`,
@@ -99,7 +99,7 @@ const handleDeleteComment = async (comment_id) => {
 
   try {
     await axios.delete(
-      `http://localhost:8000/api/blogs/user/delete_comment/${comment_id}/`,
+      `https://seagrass-backend-d6fuesa6gpe8fnan.centralus-01.azurewebsites.net/api/blogs/user/delete_comment/${comment_id}/`,
       {
         headers: { Authorization: `Bearer ${token}` },
       }

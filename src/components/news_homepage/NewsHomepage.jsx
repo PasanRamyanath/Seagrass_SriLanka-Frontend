@@ -8,7 +8,7 @@ const NewsHomepage = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetch("http://localhost:8000/api/news/")
+    fetch("https://seagrass-backend-d6fuesa6gpe8fnan.centralus-01.azurewebsites.net/api/news/")
       .then((res) => res.json())
       .then((data) => {
         if (data && data.data) {
@@ -36,10 +36,10 @@ const NewsHomepage = () => {
       return item.image;
     }
     if (item.image?.startsWith("/")) {
-      return `http://localhost:8000${item.image}`;
+      return `https://seagrass-backend-d6fuesa6gpe8fnan.centralus-01.azurewebsites.net${item.image}`;
     }
     if (item.image) {
-      return `http://localhost:8000/media/${item.image}`;
+      return `https://seagrass-backend-d6fuesa6gpe8fnan.centralus-01.azurewebsites.net/media/${item.image}`;
     }
     return "https://via.placeholder.com/400x200?text=No+Image";
   };

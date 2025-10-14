@@ -40,7 +40,7 @@ const handleProfileUpdate = async () => {
     }
 
     const response = await axios.put(
-      `http://localhost:8000/api/auth/profile/update/${user.user_id}/`,
+      `https://seagrass-backend-d6fuesa6gpe8fnan.centralus-01.azurewebsites.net/api/auth/profile/update/${user.user_id}/`,
       formData,
       { headers: { Authorization: `Bearer ${token}` } }
     );
@@ -71,7 +71,7 @@ const handleProfileUpdate = async () => {
     try {
       const token = localStorage.getItem("access_token");
       await axios.post(
-        `http://localhost:8000/api/auth/profile/change_password/${user.user_id}/`,
+        `https://seagrass-backend-d6fuesa6gpe8fnan.centralus-01.azurewebsites.net/api/auth/profile/change_password/${user.user_id}/`,
         { current_password: currentPassword, new_password: newPassword },
         { headers: { Authorization: `Bearer ${token}` } }
       );

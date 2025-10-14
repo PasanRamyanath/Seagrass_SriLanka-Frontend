@@ -17,7 +17,7 @@ const NewsDetailView = () => {
     const fetchNews = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:8000/api/news/${news_id}/`,
+          `https://seagrass-backend-d6fuesa6gpe8fnan.centralus-01.azurewebsites.net/api/news/${news_id}/`,
           { withCredentials: true }
         );
         setNews(response.data.data);
@@ -53,7 +53,7 @@ const NewsDetailView = () => {
       {/* Display image if available */}
       {news.image && (
         <img
-          src={news.image.startsWith("http") ? news.image : `http://localhost:8000${news.image}`}
+          src={news.image.startsWith("http") ? news.image : `https://seagrass-backend-d6fuesa6gpe8fnan.centralus-01.azurewebsites.net${news.image}`}
           alt={news.title || "News image"}
           className="w-full h-64 object-cover rounded mb-4"
         />

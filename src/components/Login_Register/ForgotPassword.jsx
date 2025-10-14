@@ -11,7 +11,7 @@ const ForgotPassword = ({ onClose }) => {
     e.preventDefault();
     setIsSending(true);
     try {
-      await axios.post('http://localhost:8000/api/auth/forgot-password/', { email });
+      await axios.post('https://seagrass-backend-d6fuesa6gpe8fnan.centralus-01.azurewebsites.net/api/auth/forgot-password/', { email });
       toast.success("Reset link sent to your email.");
       onClose();
     } catch (err) {

@@ -9,7 +9,7 @@ export default function Orders() {
       try {
         const token = localStorage.getItem("access_token");
         const res = await axios.get(
-          "http://localhost:8000/api/order/my-orders/",
+          "https://seagrass-backend-d6fuesa6gpe8fnan.centralus-01.azurewebsites.net/api/order/my-orders/",
           {
             headers: { Authorization: `Bearer ${token}` },
           }
@@ -99,7 +99,7 @@ export default function Orders() {
                                 <div className="flex items-center gap-3">
                                   {item.product?.image && (
                                     <img
-                                      src={`http://localhost:8000/${item.product.image}`}
+                                      src={`https://seagrass-backend-d6fuesa6gpe8fnan.centralus-01.azurewebsites.net/${item.product.image}`}
                                       alt={item.product.title}
                                       className="w-20 h-20 object-cover rounded-lg"
                                     />

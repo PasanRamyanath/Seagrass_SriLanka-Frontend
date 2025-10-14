@@ -14,14 +14,14 @@ const Breadcrumb = () => {
     const fetchTitle = async () => {
       if (location.pathname.includes('blogFullView') && id) {
         try {
-          const res = await axios.get(`http://localhost:8000/api/blogs/${id}/`);
+          const res = await axios.get(`https://seagrass-backend-d6fuesa6gpe8fnan.centralus-01.azurewebsites.net/api/blogs/${id}/`);
           setBlogTitle(res.data.title);
         } catch (error) {
           console.error('Failed to fetch blog title:', error);
         }
       } else if (location.pathname.includes('newsdetails') && id) {
         try {
-          const res = await axios.get(`http://localhost:8000/api/news/${id}/`);
+          const res = await axios.get(`https://seagrass-backend-d6fuesa6gpe8fnan.centralus-01.azurewebsites.net/api/news/${id}/`);
           setNewsTitle(res.data.title);
         } catch (error) {
           console.error('Failed to fetch news title:', error);
