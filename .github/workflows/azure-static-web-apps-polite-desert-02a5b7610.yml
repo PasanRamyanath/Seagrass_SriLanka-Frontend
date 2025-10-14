@@ -20,13 +20,13 @@ jobs:
           submodules: true
           lfs: false
 
-      - name: Setup Node.js 20
+      - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '20'
 
       - name: Install Dependencies
-        run: npm install
+        run: npm ci
 
       - name: Build And Deploy
         id: builddeploy
@@ -36,7 +36,7 @@ jobs:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
           action: "upload"
           app_location: "/"       # Root of your React app
-          api_location: ""        # No API in this case
+          api_location: ""        # No API
           output_location: "dist" # Vite default build folder
 
   close_pull_request_job:
