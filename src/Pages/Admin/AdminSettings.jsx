@@ -58,7 +58,7 @@ const AdminSettings = () => {
 
       if (!res.ok) throw new Error('Failed to update profile');
 
-      window.location.reload();
+      //window.location.reload();
       alert('Profile updated successfully!');
     } catch {
       setError('Update failed.');
