@@ -28,7 +28,7 @@ const PayButton = ({ items, totalAmount,checkoutData }) => {
     const token = localStorage.getItem("access_token");
 
     const res = await axios.post(
-      "http://localhost:8000/api/products/payment/create_payment/",
+      "https://seagrass-backend-d6fuesa6gpe8fnan.centralus-01.azurewebsites.net/api/products/payment/create_payment/",
       { items: currentItems, total_amount: currentTotal,checkoutData: checkoutData },
       { headers: { Authorization: `Bearer ${token}` } }
     );
@@ -43,7 +43,7 @@ const PayButton = ({ items, totalAmount,checkoutData }) => {
      
       try {
         await axios.post(
-          "http://localhost:8000/api/products/payment/save_payment/",
+          "https://seagrass-backend-d6fuesa6gpe8fnan.centralus-01.azurewebsites.net/api/products/payment/save_payment/",
           {
             items:currentItems,
             product_id: currentItems[0].product_id, 

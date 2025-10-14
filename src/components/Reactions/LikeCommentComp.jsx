@@ -35,7 +35,7 @@ const LikeCommentComp = (props) => {
 
         try {
           const response = await axios.post(
-            `http://localhost:8000/api/blogs/${blog_id}/like/`,
+            `https://seagrass-backend-d6fuesa6gpe8fnan.centralus-01.azurewebsites.net/api/blogs/${blog_id}/like/`,
             {},
             {
               headers: {
@@ -92,7 +92,7 @@ const LikeCommentComp = (props) => {
       }
 
       await axios.post(
-        "http://localhost:8000/api/blogs/create/comment/",
+        "https://seagrass-backend-d6fuesa6gpe8fnan.centralus-01.azurewebsites.net/api/blogs/create/comment/",
         {
           blog_id: blog_id,
           content: comment,

@@ -14,7 +14,7 @@ const Blogs_Homepage = () => {
 
   const fetchBlogs = async () => {
     try {
-      const response = await axios.get("http://localhost:8000/api/blogs/");
+      const response = await axios.get("https://seagrass-backend-d6fuesa6gpe8fnan.centralus-01.azurewebsites.net/api/blogs/");
       setBlogs(response.data);
     } catch (error) {
       console.error("Failed to fetch blogs:", error);

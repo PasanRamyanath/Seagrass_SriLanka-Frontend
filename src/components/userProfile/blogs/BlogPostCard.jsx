@@ -23,7 +23,7 @@ const BlogPostCard = () => {
     setIsLoading(true);
     try {
       const response = await axios.get(
-        `http://localhost:8000/api/blogs/user/${user.user_id}/`
+        `https://seagrass-backend-d6fuesa6gpe8fnan.centralus-01.azurewebsites.net/api/blogs/user/${user.user_id}/`
       );
       setBlogs(response.data);
     } catch (error) {
@@ -51,7 +51,7 @@ const handleDelete = async (blog_id) => {
 
   try {
     const token = localStorage.getItem("access_token");
-    await axios.delete(`http://localhost:8000/api/blogs/${blog_id}/delete/`, {
+    await axios.delete(`https://seagrass-backend-d6fuesa6gpe8fnan.centralus-01.azurewebsites.net/api/blogs/${blog_id}/delete/`, {
       headers: { Authorization: `Bearer ${token}` },
     });
 

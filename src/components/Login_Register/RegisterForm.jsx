@@ -28,7 +28,7 @@ const RegisterForm = ({ isOpen, onClose, switchToLogin }) => {
 
     setIsSubmitting(true);
     try {
-      const response = await axios.post('http://localhost:8000/api/auth/register/', {
+      const response = await axios.post('https://seagrass-backend-d6fuesa6gpe8fnan.centralus-01.azurewebsites.net/api/auth/register/', {
         fname,
         lname,
         email,

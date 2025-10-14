@@ -41,7 +41,7 @@ const EditBlogModal = ({ isOpen, onClose, blog, onUpdate }) => {
       }
 
       const response = await axios.put(
-        `http://localhost:8000/api/blogs/${blog.blog_id}/update/`,
+        `https://seagrass-backend-d6fuesa6gpe8fnan.centralus-01.azurewebsites.net/api/blogs/${blog.blog_id}/update/`,
         formData,
         {
           headers: {

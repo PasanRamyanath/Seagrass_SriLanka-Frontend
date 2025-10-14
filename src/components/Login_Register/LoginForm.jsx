@@ -24,7 +24,7 @@ const LoginForm = ({ isOpen, onClose, switchToRegister }) => {
     setIsSubmitting(true);
 
     try {
-      const res = await axios.post('http://localhost:8000/api/auth/token/', {
+      const res = await axios.post('https://seagrass-backend-d6fuesa6gpe8fnan.centralus-01.azurewebsites.net/api/auth/token/', {
         email,
         password,
       });
@@ -34,7 +34,7 @@ console.log(res);
       localStorage.setItem('access_token', access);
       localStorage.setItem('refresh_token', refresh);
 
-      const userRes = await axios.get('http://localhost:8000/api/auth/profile/', {
+      const userRes = await axios.get('https://seagrass-backend-d6fuesa6gpe8fnan.centralus-01.azurewebsites.net/api/auth/profile/', {
         headers: {
           Authorization: `Bearer ${access}`,
         },
