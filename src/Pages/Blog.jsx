@@ -31,7 +31,7 @@ const Blog = () => {
   const fetchBlogs = async () => {
     setIsLoading(true);
     try {
-      const { data } = await axios.get("http://localhost:8000/api/blogs/");
+      const { data } = await axios.get("https://seagrass-backend-d6fuesa6gpe8fnan.centralus-01.azurewebsites.net/api/blogs/");
       setBlogs(data);
     } catch (err) {
       toast.error("Failed to fetch blogs.");
@@ -67,7 +67,7 @@ const Blog = () => {
         toast.error("Please log in to post a blog.");
         return false; // Indicate failure to modal
       }
-      await axios.post("http://localhost:8000/api/blogs/post/", formData, {
+      await axios.post("https://seagrass-backend-d6fuesa6gpe8fnan.centralus-01.azurewebsites.net/api/blogs/post/", formData, {
         headers: {
           "Content-Type": "multipart/form-data",
           Authorization: `Bearer ${token}`,
