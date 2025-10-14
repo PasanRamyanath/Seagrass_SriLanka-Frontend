@@ -21,7 +21,7 @@ const AdminSettings = () => {
 
   const fetchAdminProfile = async () => {
     try {
-      const res = await fetch('http://localhost:8000/api/auth/profile/', {
+      const res = await fetch('https://seagrass-backend-d6fuesa6gpe8fnan.centralus-01.azurewebsites.net/api/auth/profile/', {
         headers: { Authorization: `Bearer ${token}` },
       });
       if (!res.ok) throw new Error('Failed to fetch admin profile');
@@ -48,7 +48,7 @@ const AdminSettings = () => {
       formData.append('lname', lastName);
       if (imageFile) formData.append('image', imageFile);
 
-      const res = await fetch(`http://localhost:8000/api/auth/profile/update/${admin.user_id}/`, {
+      const res = await fetch(`https://seagrass-backend-d6fuesa6gpe8fnan.centralus-01.azurewebsites.net/api/auth/profile/update/${admin.user_id}/`, {
         method: 'PATCH',
         headers: {
           Authorization: `Bearer ${token}`,
@@ -79,7 +79,7 @@ const AdminSettings = () => {
     if (!window.confirm('Are you sure you want to delete your profile picture?')) return;
 
     try {
-      const res = await fetch('http://localhost:8000/api/auth/profile/image/delete/', {
+      const res = await fetch('https://seagrass-backend-d6fuesa6gpe8fnan.centralus-01.azurewebsites.net/api/auth/profile/image/delete/', {
         method: 'DELETE',
         headers: { Authorization: `Bearer ${token}` },
       });
@@ -99,7 +99,7 @@ const AdminSettings = () => {
     if (!window.confirm('Are you sure you want to deactivate your account?')) return;
 
     try {
-      const res = await fetch(`http://localhost:8000/api/auth/admin/${admin.user_id}/toggle-active/`, {
+      const res = await fetch(`https://seagrass-backend-d6fuesa6gpe8fnan.centralus-01.azurewebsites.net/api/auth/admin/${admin.user_id}/toggle-active/`, {
         method: 'PATCH',
         headers: {
           Authorization: `Bearer ${token}`,

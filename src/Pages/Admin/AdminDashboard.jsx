@@ -8,10 +8,10 @@ function getImageUrl(img, imageErrors = {}) {
     return img.image;
   }
   if (img.image?.startsWith('/')) {
-    return `http://localhost:8000${img.image}`;
+    return `https://seagrass-backend-d6fuesa6gpe8fnan.centralus-01.azurewebsites.net${img.image}`;
   }
   if (img.image) {
-    return `http://localhost:8000/media/${img.image}`;
+    return `https://seagrass-backend-d6fuesa6gpe8fnan.centralus-01.azurewebsites.net/media/${img.image}`;
   }
   return 'https://via.placeholder.com/400x400?text=No+Image';
 }
@@ -20,7 +20,7 @@ function getImageUrl(img, imageErrors = {}) {
 import React, { useEffect, useState } from 'react';
 import { FaUsers, FaBoxOpen, FaClipboardList, FaNewspaper, FaBlog, FaFlask, FaImages, FaChartBar, FaPlus, FaArrowRight } from 'react-icons/fa';
 
-const API = 'http://localhost:8000/api';
+const API = 'https://seagrass-backend-d6fuesa6gpe8fnan.centralus-01.azurewebsites.net/api';
 
 // Utility: format date
 function formatDate(dateStr) {

@@ -21,7 +21,7 @@ const ProductFullView = () => {
     const fetchProduct = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:8000/api/products/view_products/${product_id}/`
+          `https://seagrass-backend-d6fuesa6gpe8fnan.centralus-01.azurewebsites.net/api/products/view_products/${product_id}/`
         );
         setProduct(response.data);
       } catch (error) {
@@ -37,8 +37,8 @@ const ProductFullView = () => {
     if (imageErrors[image]) return "https://via.placeholder.com/800x400?text=Image+Not+Available";
     if (!image) return "https://via.placeholder.com/800x400?text=No+Image";
     if (image.startsWith("http://") || image.startsWith("https://")) return image;
-    if (image.startsWith("/")) return `http://localhost:8000${image}`;
-    return `http://localhost:8000/media/${image}`;
+    if (image.startsWith("/")) return `https://seagrass-backend-d6fuesa6gpe8fnan.centralus-01.azurewebsites.net${image}`;
+    return `https://seagrass-backend-d6fuesa6gpe8fnan.centralus-01.azurewebsites.net/media/${image}`;
   };
 
   const handleImageError = (image) => {
@@ -59,7 +59,7 @@ const ProductFullView = () => {
 
     try {
       await axios.post(
-        "http://localhost:8000/api/products/cart/add/",
+        "https://seagrass-backend-d6fuesa6gpe8fnan.centralus-01.azurewebsites.net/api/products/cart/add/",
         { product_id: product.product_id, count: 1 },
         { headers: { Authorization: `Bearer ${token}` } }
       );

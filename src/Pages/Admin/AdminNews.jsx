@@ -32,7 +32,7 @@ const AdminNews = () => {
 
   const fetchNewsList = async () => {
     try {
-      const response = await fetch('http://localhost:8000/api/news/admin/list/', {
+      const response = await fetch('https://seagrass-backend-d6fuesa6gpe8fnan.centralus-01.azurewebsites.net/api/news/admin/list/', {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -83,8 +83,8 @@ const AdminNews = () => {
 
     try {
       const url = editingNewsId
-        ? `http://localhost:8000/api/news/admin/${editingNewsId}/update/`
-        : 'http://localhost:8000/api/news/admin/add/';
+        ? `https://seagrass-backend-d6fuesa6gpe8fnan.centralus-01.azurewebsites.net/api/news/admin/${editingNewsId}/update/`
+        : 'https://seagrass-backend-d6fuesa6gpe8fnan.centralus-01.azurewebsites.net/api/news/admin/add/';
       const method = editingNewsId ? 'PUT' : 'POST';
 
       const response = await fetch(url, {
@@ -116,14 +116,14 @@ const AdminNews = () => {
       is_published: news.is_published,
     });
     setEditingNewsId(news.news_id);
-    setImagePreview(news.image ? `http://localhost:8000${news.image}` : null);
+    setImagePreview(news.image ? `https://seagrass-backend-d6fuesa6gpe8fnan.centralus-01.azurewebsites.net${news.image}` : null);
   };
 
   const handleDelete = async (newsId) => {
     if (!window.confirm('Are you sure you want to delete this news article?')) return;
 
     try {
-      const response = await fetch(`http://localhost:8000/api/news/admin/${newsId}/delete/`, {
+      const response = await fetch(`https://seagrass-backend-d6fuesa6gpe8fnan.centralus-01.azurewebsites.net/api/news/admin/${newsId}/delete/`, {
         method: 'DELETE',
         headers: {
           Authorization: `Bearer ${token}`,
@@ -144,7 +144,7 @@ const AdminNews = () => {
 
   const handleTogglePublish = async (newsId, isPublished) => {
     try {
-      const response = await fetch(`http://localhost:8000/api/news/admin/${newsId}/update/`, {
+      const response = await fetch(`https://seagrass-backend-d6fuesa6gpe8fnan.centralus-01.azurewebsites.net/api/news/admin/${newsId}/update/`, {
         method: 'PATCH',
         headers: {
           Authorization: `Bearer ${token}`,
@@ -325,7 +325,7 @@ const AdminNews = () => {
                     <img
                       src={
                         news.image
-                          ? `http://localhost:8000${news.image}`
+                          ? `https://seagrass-backend-d6fuesa6gpe8fnan.centralus-01.azurewebsites.net${news.image}`
                           : '/no-image.png'
                       }
                       alt={news.title}
@@ -409,7 +409,7 @@ const AdminNews = () => {
               </button>
               <h2 className="text-3xl font-bold mb-4 text-center break-words">{selectedNews.title}</h2>
               <img
-                src={selectedNews.image ? `http://localhost:8000${selectedNews.image}` : '/no-image.png'}
+                src={selectedNews.image ? `https://seagrass-backend-d6fuesa6gpe8fnan.centralus-01.azurewebsites.net${selectedNews.image}` : '/no-image.png'}
                 alt={selectedNews.title}
                 className="w-full h-64 object-cover rounded-md mb-6 border"
                 

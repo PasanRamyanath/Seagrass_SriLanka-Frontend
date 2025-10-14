@@ -19,7 +19,7 @@ const Products = () => {
 
   const fetchProducts = async () => {
     try {
-      const response = await axios.get("http://localhost:8000/api/products/list/");
+      const response = await axios.get("https://seagrass-backend-d6fuesa6gpe8fnan.centralus-01.azurewebsites.net/api/products/list/");
       setProducts(response.data);
     } catch (error) {
       toast.error("Failed to fetch products.");
@@ -47,7 +47,7 @@ const Products = () => {
     if (productImage.startsWith("http://") || productImage.startsWith("https://")) {
       return productImage;
     }
-    return `http://localhost:8000/${productImage}`;
+    return `https://seagrass-backend-d6fuesa6gpe8fnan.centralus-01.azurewebsites.net/${productImage}`;
   };
 
   // Pagination calculations

@@ -37,7 +37,7 @@ const AdminProducts = () => {
   const fetchProducts = async () => {
     setLoading(true);
     try {
-      const res = await fetch("http://localhost:8000/api/products/admin/list/", {
+      const res = await fetch("https://seagrass-backend-d6fuesa6gpe8fnan.centralus-01.azurewebsites.net/api/products/admin/list/", {
         headers: { Authorization: `Bearer ${token}` },
       });
       const data = await res.json();
@@ -53,8 +53,8 @@ const AdminProducts = () => {
   const getImageUrl = (img) => {
     if (!img) return "https://via.placeholder.com/150?text=No+Image";
     if (img.startsWith("http")) return img;
-    if (img.startsWith("/")) return `http://localhost:8000${img}`;
-    return `http://localhost:8000/media/${img}`;
+    if (img.startsWith("/")) return `https://seagrass-backend-d6fuesa6gpe8fnan.centralus-01.azurewebsites.net${img}`;
+    return `https://seagrass-backend-d6fuesa6gpe8fnan.centralus-01.azurewebsites.net/media/${img}`;
   };
 
   const handleInputChange = (e) => {
@@ -114,8 +114,8 @@ const AdminProducts = () => {
     }
 
     const url = editingId
-      ? `http://localhost:8000/api/products/admin/${editingId}/update/`
-      : "http://localhost:8000/api/products/admin/add/";
+      ? `https://seagrass-backend-d6fuesa6gpe8fnan.centralus-01.azurewebsites.net/api/products/admin/${editingId}/update/`
+      : "https://seagrass-backend-d6fuesa6gpe8fnan.centralus-01.azurewebsites.net/api/products/admin/add/";
     const method = editingId ? "PUT" : "POST";
 
     try {
@@ -157,7 +157,7 @@ const AdminProducts = () => {
   const handleDelete = async (productId) => {
     if (!window.confirm("Are you sure you want to delete this product?")) return;
     try {
-      const res = await fetch(`http://localhost:8000/api/products/admin/${productId}/delete/`, {
+      const res = await fetch(`https://seagrass-backend-d6fuesa6gpe8fnan.centralus-01.azurewebsites.net/api/products/admin/${productId}/delete/`, {
         method: "DELETE",
         headers: { Authorization: `Bearer ${token}` },
       });

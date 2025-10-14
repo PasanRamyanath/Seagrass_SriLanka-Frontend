@@ -21,7 +21,7 @@ const AdminResearch = () => {
 
   const fetchResearchArticles = async () => {
     try {
-      const response = await fetch('http://localhost:8000/api/research/admin/list/', {
+      const response = await fetch('https://seagrass-backend-d6fuesa6gpe8fnan.centralus-01.azurewebsites.net/api/research/admin/list/', {
         headers: { Authorization: `Bearer ${token}` },
       });
       if (!response.ok) throw new Error('Failed to fetch research articles');
@@ -43,8 +43,8 @@ const AdminResearch = () => {
     e.preventDefault();
     const payload = { ...formData, admin_id: adminId };
     const url = editingId
-      ? `http://localhost:8000/api/research/admin/${editingId}/update/`
-      : 'http://localhost:8000/api/research/admin/add/';
+      ? `https://seagrass-backend-d6fuesa6gpe8fnan.centralus-01.azurewebsites.net/api/research/admin/${editingId}/update/`
+      : 'https://seagrass-backend-d6fuesa6gpe8fnan.centralus-01.azurewebsites.net/api/research/admin/add/';
     const method = editingId ? 'PUT' : 'POST';
 
     try {
@@ -78,7 +78,7 @@ const AdminResearch = () => {
   const handleDelete = async (id) => {
     if (!window.confirm('Are you sure you want to delete this article?')) return;
     try {
-      const response = await fetch(`http://localhost:8000/api/research/admin/${id}/delete/`, {
+      const response = await fetch(`https://seagrass-backend-d6fuesa6gpe8fnan.centralus-01.azurewebsites.net/api/research/admin/${id}/delete/`, {
         method: 'DELETE',
         headers: { Authorization: `Bearer ${token}` },
       });

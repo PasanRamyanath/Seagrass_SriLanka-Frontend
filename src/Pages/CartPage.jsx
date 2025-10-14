@@ -22,7 +22,7 @@ const CartPage = () => {
     try {
       const token = localStorage.getItem("access_token");
       const res = await axios.get(
-        "http://localhost:8000/api/products/cart_items/",
+        "https://seagrass-backend-d6fuesa6gpe8fnan.centralus-01.azurewebsites.net/api/products/cart_items/",
         {
           headers: { Authorization: `Bearer ${token}` },
         }
@@ -47,7 +47,7 @@ const CartPage = () => {
     const token = localStorage.getItem("access_token");
     try {
       await axios.put(
-        `http://localhost:8000/api/products/cart/update_item_count/${productId}/`, // pass productId in URL
+        `https://seagrass-backend-d6fuesa6gpe8fnan.centralus-01.azurewebsites.net/api/products/cart/update_item_count/${productId}/`, // pass productId in URL
         { count: newCount },
         {
           headers: { Authorization: `Bearer ${token}` },
@@ -76,7 +76,7 @@ const CartPage = () => {
 
     try {
       await axios.delete(
-        `http://localhost:8000/api/products/cart/remove_cart_item/${productId}/`,
+        `https://seagrass-backend-d6fuesa6gpe8fnan.centralus-01.azurewebsites.net/api/products/cart/remove_cart_item/${productId}/`,
         {
           headers: { Authorization: `Bearer ${token}` },
         }
@@ -129,7 +129,7 @@ const CartPage = () => {
                     src={
                       item.product_image?.startsWith("http")
                         ? item.product_image
-                        : `http://localhost:8000${item.product_image}`
+                        : `https://seagrass-backend-d6fuesa6gpe8fnan.centralus-01.azurewebsites.net${item.product_image}`
                     }
                     alt={item.product_title}
                     className="w-20 h-20 object-cover rounded-md"

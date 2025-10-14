@@ -24,7 +24,7 @@ const AdminOrders = () => {
   const fetchOrders = async () => {
     try {
       const response = await fetch(
-        "http://localhost:8000/api/order/admin/list/",
+        "https://seagrass-backend-d6fuesa6gpe8fnan.centralus-01.azurewebsites.net/api/order/admin/list/",
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -45,7 +45,7 @@ const AdminOrders = () => {
     setUpdating(true);
     try {
       const response = await fetch(
-        `http://localhost:8000/api/order/admin/${orderId}/update/`,
+        `https://seagrass-backend-d6fuesa6gpe8fnan.centralus-01.azurewebsites.net/api/order/admin/${orderId}/update/`,
         {
           method: "PATCH",
           headers: {
@@ -261,7 +261,7 @@ const AdminOrders = () => {
                           <div className="flex items-center">
                             <div className="flex-shrink-0 h-10 w-12">
                                 <div className="flex items-center">
-                              <img src={`http://localhost:8000/${order.user.image}`} alt={order.user.full_name} className="w-12 h-12 rounded-full object-cover" />
+                              <img src={`https://seagrass-backend-d6fuesa6gpe8fnan.centralus-01.azurewebsites.net/${order.user.image}`} alt={order.user.full_name} className="w-12 h-12 rounded-full object-cover" />
                                 
                               </div>
                             </div>
@@ -514,7 +514,7 @@ const AdminOrders = () => {
                       </h4>
                       <div className="bg-gray-100 rounded-lg p-4 space-y-4">
                         <div className="flex items-center">
-                            <img src={`http://localhost:8000/${selectedOrder.user.image}`} alt={selectedOrder.user.full_name} className="w-12 h-12 rounded-full object-cover mr-4" />
+                            <img src={`https://seagrass-backend-d6fuesa6gpe8fnan.centralus-01.azurewebsites.net/${selectedOrder.user.image}`} alt={selectedOrder.user.full_name} className="w-12 h-12 rounded-full object-cover mr-4" />
                           <div>
                             <User className="h-6 w-6 text-green-600" />
                           </div>
@@ -650,7 +650,7 @@ const AdminOrders = () => {
                         {selectedOrder.items.map((item, index) => (
                         <div key={item.id || index} className="flex items-center justify-between p-4 bg-white rounded-lg border border-gray-300 hover:shadow-sm transition-shadow">
                             <div className="flex items-center">
-                             <img src={`http://localhost:8000/${item.product.image}`} alt={item.product.title} className="w-10 h-10 rounded-lg flex items-center justify-center mr-4" />
+                             <img src={`https://seagrass-backend-d6fuesa6gpe8fnan.centralus-01.azurewebsites.net/${item.product.image}`} alt={item.product.title} className="w-10 h-10 rounded-lg flex items-center justify-center mr-4" />
                             <div>
                                 <p className="font-medium text-gray-800">{item.product?.title || "Product Name"}</p>
                                 <p className="text-sm text-gray-500">Product ID: {item.product?.id || "N/A"}</p>

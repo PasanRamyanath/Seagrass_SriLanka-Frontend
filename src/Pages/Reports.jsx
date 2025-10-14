@@ -73,7 +73,7 @@ const Reports = () => {
 
     try {
       const response = await axios.get(
-        `http://localhost:8000/api/research/search/?q=${query}`
+        `https://seagrass-backend-d6fuesa6gpe8fnan.centralus-01.azurewebsites.net/api/research/search/?q=${query}`
       );
       setResults(response.data);
     } catch (error) {

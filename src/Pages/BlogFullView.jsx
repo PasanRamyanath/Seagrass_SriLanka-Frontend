@@ -20,7 +20,7 @@ const BlogFullView = () => {
 
   const fetchBlog = async () => {
     try {
-      const response = await fetch(`http://localhost:8000/api/blogs/${id}/`);
+      const response = await fetch(`https://seagrass-backend-d6fuesa6gpe8fnan.centralus-01.azurewebsites.net/api/blogs/${id}/`);
       if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
       const data = await response.json();
       setBlog(data);
