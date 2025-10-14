@@ -26,9 +26,7 @@ jobs:
           node-version: '20'
 
       - name: Install Dependencies
-        run: |
-          rm -rf node_modules package-lock.json
-          npm ci
+        run: npm install
 
       - name: Build And Deploy
         id: builddeploy
