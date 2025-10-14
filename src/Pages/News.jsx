@@ -59,7 +59,7 @@ const News = () => {
 
   useEffect(() => {
     setLoading(true);
-    fetch('http://localhost:8000/api/news/')
+    fetch('https://seagrass-backend-d6fuesa6gpe8fnan.centralus-01.azurewebsites.net/api/news/')
       .then(res => res.json())
       .then(response => {
         const publishedNews = response.data || [];
@@ -89,10 +89,10 @@ const News = () => {
       return news.image;
     }
     if (news.image?.startsWith('/')) {
-      return `http://localhost:8000${news.image}`;
+      return `https://seagrass-backend-d6fuesa6gpe8fnan.centralus-01.azurewebsites.net${news.image}`;
     }
     if (news.image) {
-      return `http://localhost:8000/media/${news.image}`;
+      return `https://seagrass-backend-d6fuesa6gpe8fnan.centralus-01.azurewebsites.net/media/${news.image}`;
     }
     return 'https://via.placeholder.com/400x200?text=No+Image';
   };

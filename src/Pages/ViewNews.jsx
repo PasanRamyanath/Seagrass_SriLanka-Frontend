@@ -27,10 +27,10 @@ const ViewFullNews = () => {
       return news.image;
     }
     if (news.image && news.image.startsWith('/')) {
-      return `http://localhost:8000${news.image}`;
+      return `https://seagrass-backend-d6fuesa6gpe8fnan.centralus-01.azurewebsites.net${news.image}`;
     }
     if (news.image) {
-      return `http://localhost:8000/media/${news.image}`;
+      return `https://seagrass-backend-d6fuesa6gpe8fnan.centralus-01.azurewebsites.net/media/${news.image}`;
     }
     return 'https://via.placeholder.com/800x400?text=No+Image';
   };

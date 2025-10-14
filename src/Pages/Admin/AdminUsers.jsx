@@ -29,7 +29,7 @@ const AdminUsers = () => {
   const fetchUsers = async () => {
     setLoading(true);
     try {
-      const response = await fetch('http://localhost:8000/api/auth/admin/all/', {
+      const response = await fetch('https://seagrass-backend-d6fuesa6gpe8fnan.centralus-01.azurewebsites.net/api/auth/admin/all/', {
         headers: { Authorization: `Bearer ${token}` },
       });
       if (!response.ok) throw new Error('Failed to fetch users');
@@ -44,7 +44,7 @@ const AdminUsers = () => {
 
   const fetchCurrentUser = async () => {
     try {
-      const response = await fetch('http://localhost:8000/api/auth/profile/', {
+      const response = await fetch('https://seagrass-backend-d6fuesa6gpe8fnan.centralus-01.azurewebsites.net/api/auth/profile/', {
         headers: { Authorization: `Bearer ${token}` },
       });
       if (!response.ok) throw new Error('Failed to fetch current user');
@@ -58,7 +58,7 @@ const AdminUsers = () => {
   // Helper to fetch a single user by ID
   const fetchUserById = async (userId) => {
     try {
-      const response = await fetch(`http://localhost:8000/api/auth/get_user/${userId}/`, {
+      const response = await fetch(`https://seagrass-backend-d6fuesa6gpe8fnan.centralus-01.azurewebsites.net/api/auth/get_user/${userId}/`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       if (!response.ok) throw new Error('Failed to fetch user');
@@ -79,7 +79,7 @@ const AdminUsers = () => {
   // Confirmed handler for toggling active status
   const handleToggleActiveUser = async (userId, isActive) => {
     try {
-      const response = await fetch(`http://localhost:8000/api/auth/admin/${userId}/toggle-active/`, {
+      const response = await fetch(`https://seagrass-backend-d6fuesa6gpe8fnan.centralus-01.azurewebsites.net/api/auth/admin/${userId}/toggle-active/`, {
         method: 'PATCH',
         headers: {
           Authorization: `Bearer ${token}`,
@@ -115,7 +115,7 @@ const AdminUsers = () => {
   // Confirmed handler for toggling admin status
   const handleToggleAdmin = async (userId, isStaff) => {
     try {
-      const response = await fetch(`http://localhost:8000/api/auth/admin/${userId}/update/`, {
+      const response = await fetch(`https://seagrass-backend-d6fuesa6gpe8fnan.centralus-01.azurewebsites.net/api/auth/admin/${userId}/update/`, {
         method: 'PATCH',
         headers: {
           Authorization: `Bearer ${token}`,

@@ -19,7 +19,7 @@ const Gallery = () => {
     const fetchGalleryImages = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:8000/api/core/gallery/"
+          "https://seagrass-backend-d6fuesa6gpe8fnan.centralus-01.azurewebsites.net/api/core/gallery/"
         );
         if (response.data && response.data.data) {
           setImages(response.data.data);
@@ -59,10 +59,10 @@ const Gallery = () => {
       return img.image;
     }
     if (img.image?.startsWith("/")) {
-      return `http://localhost:8000${img.image}`;
+      return `https://seagrass-backend-d6fuesa6gpe8fnan.centralus-01.azurewebsites.net${img.image}`;
     }
     if (img.image) {
-      return `http://localhost:8000/media/${img.image}`;
+      return `https://seagrass-backend-d6fuesa6gpe8fnan.centralus-01.azurewebsites.net/media/${img.image}`;
     }
     return "https://via.placeholder.com/400x400?text=No+Image";
   };

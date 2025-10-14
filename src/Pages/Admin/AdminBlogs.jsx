@@ -33,7 +33,7 @@ const AdminBlogs = () => {
 
   const fetchAdminBlogs = async () => {
     try {
-      const response = await fetch('http://localhost:8000/api/blogs/admin/adminposts/', {
+      const response = await fetch('https://seagrass-backend-d6fuesa6gpe8fnan.centralus-01.azurewebsites.net/api/blogs/admin/adminposts/', {
         headers: { Authorization: `Bearer ${token}` },
       });
       if (!response.ok) throw new Error('Failed to fetch admin blogs');
@@ -46,7 +46,7 @@ const AdminBlogs = () => {
 
   const fetchUserBlogs = async () => {
     try {
-      const response = await fetch('http://localhost:8000/api/blogs/admin/userposts/', {
+      const response = await fetch('https://seagrass-backend-d6fuesa6gpe8fnan.centralus-01.azurewebsites.net/api/blogs/admin/userposts/', {
         headers: { Authorization: `Bearer ${token}` },
       });
       if (!response.ok) throw new Error('Failed to fetch user blogs');
@@ -216,8 +216,8 @@ const AdminBlogs = () => {
     if (formData.image) data.append('image', formData.image);
     try {
       const url = editingBlogId
-        ? `http://localhost:8000/api/blogs/admin/${editingBlogId}/update/`
-        : 'http://localhost:8000/api/blogs/admin/post/';
+        ? `https://seagrass-backend-d6fuesa6gpe8fnan.centralus-01.azurewebsites.net/api/blogs/admin/${editingBlogId}/update/`
+        : 'https://seagrass-backend-d6fuesa6gpe8fnan.centralus-01.azurewebsites.net/api/blogs/admin/post/';
       const method = editingBlogId ? 'PUT' : 'POST';
       const response = await fetch(url, {
         method,
@@ -259,7 +259,7 @@ const AdminBlogs = () => {
   const handleDelete = async (blogId) => {
     if (!window.confirm('Are you sure you want to delete this blog?')) return;
     try {
-      const response = await fetch(`http://localhost:8000/api/blogs/admin/${blogId}/delete/`, {
+      const response = await fetch(`https://seagrass-backend-d6fuesa6gpe8fnan.centralus-01.azurewebsites.net/api/blogs/admin/${blogId}/delete/`, {
         method: 'DELETE',
         headers: { Authorization: `Bearer ${token}` },
       });

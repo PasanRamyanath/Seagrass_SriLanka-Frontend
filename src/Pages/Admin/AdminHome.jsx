@@ -63,7 +63,7 @@ const AdminHome = () => {
     const token = localStorage.getItem('access_token');
     if (!token) return;
 
-    fetch('http://localhost:8000/api/auth/profile/', {
+    fetch('https://seagrass-backend-d6fuesa6gpe8fnan.centralus-01.azurewebsites.net/api/auth/profile/', {
       headers: { Authorization: `Bearer ${token}` },
     })
       .then((res) => {

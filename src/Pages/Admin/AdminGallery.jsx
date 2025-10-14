@@ -25,10 +25,10 @@ const AdminGallery = () => {
       return img.image;
     }
     if (img.image?.startsWith('/')) {
-      return `http://localhost:8000${img.image}`;
+      return `https://seagrass-backend-d6fuesa6gpe8fnan.centralus-01.azurewebsites.net${img.image}`;
     }
     if (img.image) {
-      return `http://localhost:8000/media/${img.image}`;
+      return `https://seagrass-backend-d6fuesa6gpe8fnan.centralus-01.azurewebsites.net/media/${img.image}`;
     }
     return 'https://via.placeholder.com/400x400?text=No+Image';
   };
@@ -49,7 +49,7 @@ const AdminGallery = () => {
 
   const fetchGalleryList = async () => {
     try {
-      const response = await fetch('http://localhost:8000/api/core/admin/gallery/my-images/', {
+      const response = await fetch('https://seagrass-backend-d6fuesa6gpe8fnan.centralus-01.azurewebsites.net/api/core/admin/gallery/my-images/', {
         headers: { Authorization: `Bearer ${token}` },
       });
       if (!response.ok) throw new Error('Failed to fetch gallery');
@@ -89,8 +89,8 @@ const AdminGallery = () => {
 
     try {
       const url = editingImageId
-        ? `http://localhost:8000/api/core/admin/gallery/${editingImageId}/update/`
-        : 'http://localhost:8000/api/core/admin/gallery/upload/';
+        ? `https://seagrass-backend-d6fuesa6gpe8fnan.centralus-01.azurewebsites.net/api/core/admin/gallery/${editingImageId}/update/`
+        : 'https://seagrass-backend-d6fuesa6gpe8fnan.centralus-01.azurewebsites.net/api/core/admin/gallery/upload/';
       const method = editingImageId ? 'PUT' : 'POST';
 
       const response = await fetch(url, {
@@ -115,13 +115,13 @@ const AdminGallery = () => {
   const handleEdit = (image) => {
     setFormData({ caption: image.caption, image: null });
     setEditingImageId(image.image_id);
-    setImagePreview(image.image ? `http://localhost:8000${image.image}` : null);
+    setImagePreview(image.image ? `https://seagrass-backend-d6fuesa6gpe8fnan.centralus-01.azurewebsites.net${image.image}` : null);
   };
 
   const handleDelete = async (imageId) => {
     if (!window.confirm('Are you sure you want to delete this image?')) return;
     try {
-      const response = await fetch(`http://localhost:8000/api/core/admin/gallery/${imageId}/delete/`, {
+      const response = await fetch(`https://seagrass-backend-d6fuesa6gpe8fnan.centralus-01.azurewebsites.net/api/core/admin/gallery/${imageId}/delete/`, {
         method: 'DELETE',
         headers: { Authorization: `Bearer ${token}` },
       });
