@@ -1,9 +1,9 @@
 import React, { useEffect } from "react";
-import Banner from "/banner.webp"; // Make sure this path is correct
-import imag1 from "/Photo-1.jpg";
-import imag2 from "/PC290412.jpg";
-import imag3 from "/Photo-6.JPG";
-import imag4 from "/seagrass_leaves.png";
+import Banner from "../assets/banner.webp"; // Make sure this path is correct
+import imag1 from "../assets/Photo-1.jpg";
+import imag2 from "../assets/PC290412.jpg";
+import imag3 from "../assets/Photo-6.jpg";
+import imag4 from "../assets/seagrass_leaves.png";
 import NewsHomepage from "../components/news_homepage/NewsHomepage";
 import Blogs_Homepage from "../components/blogs_Homepage/Blogs_Homepage";
 
@@ -45,32 +45,50 @@ const Home = () => {
 
       {/* What is Seagrass Section */}
       <div className="w-full my-10 px-4 max-w-7xl mx-auto">
-  <hr className="w-full mb-6" />
+        <hr className="w-full mb-6" />
 
-  <div className="grid grid-cols-1 md:grid-cols-2 gap-6 p-10">
-    {/* Left: Text */}
-    <div className="flex flex-col justify-center h-[400px]">
-      <h2 className="text-5xl sm:text-6xl font-bold mb-4 pb-4 text-[#1B7B19] text-center font-serif">
-        Nature’s Underwater Wonder: Seagrass
-      </h2>
-      <p className="text-gray-600 leading-relaxed text-xl text-left font-serif">
-        Beneath the ocean’s surface lies a world of green — seagrass meadows, delicate yet powerful...
-      </p>
-    </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 p-10">
+          {/* Left: Text */}
+          <div className="justify-center h-[400] ">
+            <h2 className="text-5xl sm:text-6xl font-bold mb-4 pb-4  text-[#1B7B19] text-center font-serif">
+              Nature’s Underwater Wonder: Seagrass
+            </h2>
+            <p className="text-gray-600 leading-relaxed text-xl text-left font-serif">
+              Beneath the ocean’s surface lies a world of green — seagrass meadows, delicate yet powerful. These flowering plants sway gently with the tides, 
+              covering the sea floor like an underwater rainforest.They’re not seaweed, but true plants with roots, leaves, and even tiny blossoms. Quietly working behind the scenes, 
+              seagrass brings life to the ocean, offering a home to marine creatures and helping our planet breathe.Seagrass is beauty, balance, and life — all beneath the waves.
 
-    {/* Right: Images */}
-    <div className="grid grid-cols-2 gap-4">
-      <img src={imag1} alt="Seagrass 1" className="w-full h-auto rounded shadow" />
-      <img src={imag2} alt="Seagrass 2" className="w-full h-auto rounded shadow" />
-      <div className="col-span-2 flex justify-center">
-        <img src={imag3} alt="Seagrass 3" className="w-1/2 h-auto rounded shadow" />
+
+            </p>
+          </div>
+
+          {/* Right: Images */}
+          <div className="grid grid-cols-2 gap-4">
+            {/* First row - two images */}
+            <img
+              src={imag1}
+              alt="Seagrass 1"
+              className="w-full h-auto rounded shadow"
+            />
+            <img
+              src={imag2}
+              alt="Seagrass 2"
+              className="w-full h-auto rounded shadow"
+            />
+
+            {/* Second row - one centered image */}
+            <div className="col-span-2 flex justify-center top-[-10]">
+              <img
+                src={imag3}
+                alt="Seagrass 3"
+                className="w-1/2 h-auto rounded shadow"
+              />
+            </div>
+          </div>
+        </div>
+
+        <hr className="w-full mb-6" />
       </div>
-    </div>
-  </div>
-
-  <hr className="w-full mb-6" />
-</div>
-
       {/* some blogs comes here */}
       <div>
         <Blogs_Homepage />
