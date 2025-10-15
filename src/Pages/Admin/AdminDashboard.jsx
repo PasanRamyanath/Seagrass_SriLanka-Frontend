@@ -18,6 +18,7 @@ function getImageUrl(img, imageErrors = {}) {
 
 
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { FaUsers, FaBoxOpen, FaClipboardList, FaNewspaper, FaBlog, FaFlask, FaImages, FaChartBar, FaPlus, FaArrowRight } from 'react-icons/fa';
 
 const API = 'https://seagrass-backend-d6fuesa6gpe8fnan.centralus-01.azurewebsites.net/api';
@@ -313,22 +314,22 @@ function ChartsSection({ stats }) {
 // Quick links for admin actions
 function QuickLinks() {
   const links = [
-    { label: 'Add Product', href: '/admin/adminProducts', icon: <FaPlus /> },
-    { label: 'Add News', href: '/admin/adminnews', icon: <FaPlus /> },
-    { label: 'Add Blog', href: '/admin/adminblogs', icon: <FaPlus /> },
-    { label: 'Add Research', href: '/admin/adminresearch', icon: <FaPlus /> },
-    { label: 'Add Gallery Image', href: '/admin/admingallery', icon: <FaPlus /> },
-    { label: 'View Orders', href: '/admin/adminorders', icon: <FaArrowRight /> },
-    { label: 'View Users', href: '/admin/adminusers', icon: <FaArrowRight /> },
+    { label: 'Add Product', to: '/admin/adminProducts', icon: <FaPlus /> },
+    { label: 'Add News', to: '/admin/adminnews', icon: <FaPlus /> },
+    { label: 'Add Blog', to: '/admin/adminblogs', icon: <FaPlus /> },
+    { label: 'Add Research', to: '/admin/adminresearch', icon: <FaPlus /> },
+    { label: 'Add Gallery Image', to: '/admin/admingallery', icon: <FaPlus /> },
+    { label: 'View Orders', to: '/admin/adminorders', icon: <FaArrowRight /> },
+    { label: 'View Users', to: '/admin/adminusers', icon: <FaArrowRight /> },
   ];
   return (
     <div className="bg-white rounded-lg shadow-md p-6 mt-8">
       <h3 className="font-semibold text-lg mb-4">Quick Actions</h3>
       <div className="flex flex-wrap gap-4">
         {links.map(l => (
-          <a key={l.label} href={l.href} className="flex items-center gap-2 px-4 py-2 bg-green-100 hover:bg-green-200 rounded-md text-green-800 font-medium transition-all">
+          <Link key={l.label} to={l.to} className="flex items-center gap-2 px-4 py-2 bg-green-100 hover:bg-green-200 rounded-md text-green-800 font-medium transition-all">
             {l.icon} {l.label}
-          </a>
+          </Link>
         ))}
       </div>
     </div>
