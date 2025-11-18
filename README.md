@@ -9,7 +9,6 @@ This README covers setup, features, routes, tech stack, scripts, environment and
 
 **Screenshots**
 
-Below are screenshots from the app (2 images per row). Click to open full size.
 
 | | |
 |---|---|
