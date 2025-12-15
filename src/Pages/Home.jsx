@@ -11,19 +11,19 @@ const Home = () => {
   return (
     <div className="w-full">
       {/* Banner Section */}
-  <div className="relative w-full mt-20">
+  <div className="relative w-full mt-16 sm:mt-20">
   {/* Banner Image */}
   <img
     src={Banner}
     alt="Banner"
-    className="w-full h-[400px] object-cover"
+    className="w-full h-[250px] sm:h-[350px] md:h-[400px] object-cover"
   />
 
   {/* Bottom Wave */}
   {/* White Wave */}
   <div className="absolute bottom-0 left-0 w-full overflow-hidden leading-[0] z-10">
     <svg
-      className="relative block w-[calc(100%+1.3px)] h-[80px]"
+      className="relative block w-full h-[50px] sm:h-[60px] md:h-[80px]"
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 1200 120"
       preserveAspectRatio="none"
@@ -39,21 +39,21 @@ const Home = () => {
 
 
       {/* this is to display some news from the db */}
-      <div className="">
+      <div className="w-full">
         <NewsHomepage />
       </div>
 
       {/* What is Seagrass Section */}
-      <div className="w-full my-10 px-4 max-w-7xl mx-auto">
-        <hr className="w-full mb-6" />
+      <div className="w-full my-8 sm:my-10 px-4 max-w-7xl mx-auto">
+        <hr className="w-full mb-6 border-gray-200" />
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 p-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 p-6 sm:p-10">
           {/* Left: Text */}
-          <div className="justify-center h-[400] ">
-            <h2 className="text-5xl sm:text-6xl font-bold mb-4 pb-4  text-[#1B7B19] text-center font-serif">
+          <div className="flex flex-col justify-center">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 pb-2 sm:pb-4 text-[#1B7B19] text-center font-serif">
               Nature’s Underwater Wonder: Seagrass
             </h2>
-            <p className="text-gray-600 leading-relaxed text-xl text-left font-serif">
+            <p className="text-gray-600 leading-relaxed text-base sm:text-lg md:text-xl text-left font-serif">
               Beneath the ocean’s surface lies a world of green — seagrass meadows, delicate yet powerful. These flowering plants sway gently with the tides, 
               covering the sea floor like an underwater rainforest.They’re not seaweed, but true plants with roots, leaves, and even tiny blossoms. Quietly working behind the scenes, 
               seagrass brings life to the ocean, offering a home to marine creatures and helping our planet breathe.Seagrass is beauty, balance, and life — all beneath the waves.
@@ -68,43 +68,43 @@ const Home = () => {
             <img
               src={imag1}
               alt="Seagrass 1"
-              className="w-full h-auto rounded shadow"
+              className="w-full h-auto rounded shadow object-cover"
             />
             <img
               src={imag2}
               alt="Seagrass 2"
-              className="w-full h-auto rounded shadow"
+              className="w-full h-auto rounded shadow object-cover"
             />
 
             {/* Second row - one centered image */}
-            <div className="col-span-2 flex justify-center top-[-10]">
+            <div className="col-span-2 flex justify-center">
               <img
                 src={imag3}
                 alt="Seagrass 3"
-                className="w-1/2 h-auto rounded shadow"
+                className="w-full sm:w-3/4 md:w-1/2 h-auto rounded shadow object-cover"
               />
             </div>
           </div>
         </div>
-
-        <hr className="w-full mb-6" />
+        
+        <hr className="w-full mb-6 border-gray-200" />
       </div>
       {/* some blogs comes here */}
       <div>
         <Blogs_Homepage />
       </div>
 
-      <div className="flex flex-wrap md:flex-nowrap px-4 py-8 gap-8">
+      <div className="flex flex-wrap md:flex-nowrap px-4 sm:px-6 lg:px-8 py-8 gap-8 max-w-7xl mx-auto">
         {/* Left Column - Heading */}
         <div className="w-full md:w-1/2 flex items-center justify-center">
-          <h2 className="text-5xl sm:text-6xl font-bold mb-4 text-[#1B7B19] text-center font-serif">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 md:mb-0 text-[#1B7B19] text-center font-serif">
             Why We Need to <br /> Save Seagrass ?
           </h2>
         </div>
 
         {/* Right Column - Paragraph */}
         <div className="w-full md:w-1/2 flex items-center">
-          <p className="text-gray-600 leading-relaxed text-xl font-serif">
+          <p className="text-gray-600 leading-relaxed text-base sm:text-lg md:text-xl font-serif">
             Seagrasses are the ocean’s hidden heroes.They fight climate change by absorbing carbon faster than rainforests, protect coastlines from erosion, and keep our waters clean. 
             These underwater plants are home to fish, turtles, and countless marine creatures—and support millions of people who depend on the sea.
             But seagrasses are disappearing fast due to pollution and human activity.Saving seagrass means saving marine life, protecting coastlines, and securing our planet’s future
@@ -113,7 +113,7 @@ const Home = () => {
       </div>
 
       {/*to include the seagrass leaves image */}
-      <div className="mt-0 mb-0">
+      <div className="w-full mt-6 mb-0">
         <img src={imag4} alt="Seagrass Leaves" className="w-full h-auto" />
       </div>
     </div>
