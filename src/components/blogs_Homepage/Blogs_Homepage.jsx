@@ -34,20 +34,19 @@ const Blogs_Homepage = () => {
 
   return (
     <motion.div
-      className="px-6 mt-10"
-      initial={{ opacity: 0, y: 40 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6 }}
-    >
-      {/* Heading */}
-      <motion.h1
-        className="text-3xl font-bold ml-35 text-[#1B7B19] mb-8"
-        initial={{ opacity: 0, x: -50 }}
-        animate={{ opacity: 1, x: 0 }}
-        transition={{ duration: 0.5 }}
-      >
-        Latest Blogs
-      </motion.h1>
+          className="max-w-7xl mx-auto px-4 py-10"
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+        >
+          <motion.h2
+            className="text-3xl font-bold text-green-700 mb-10"
+            initial={{ opacity: 0, x: -50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5 }}
+          >
+            Latest Blogs
+          </motion.h2>
 
       {/* Blog Cards */}
       <motion.div
