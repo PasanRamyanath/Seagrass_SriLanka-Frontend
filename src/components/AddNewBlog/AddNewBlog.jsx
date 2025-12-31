@@ -10,6 +10,9 @@ const AddBlogModal = ({ show, onClose, onPost }) => {
   const [imagePreview, setImagePreview] = useState(null);
   const [metaDescription, setMetaDescription] = useState("");
 
+  // read Azure OpenAI key from Vite env (VITE_ prefix required)
+  const AZURE_OPENAI_API_KEY = import.meta.env.VITE_AZURE_OPENAI_API_KEY;
+
   const [pastStates, setPastStates] = useState([]);
   const [futureStates, setFutureStates] = useState([]);
   const [isTyping, setIsTyping] = useState(false);
@@ -82,6 +85,10 @@ const AddBlogModal = ({ show, onClose, onPost }) => {
       toast.error("Title and content are required to optimize.");
       return;
     }
+    if (!AZURE_OPENAI_API_KEY) {
+      toast.error("Azure OpenAI API key is not set in environment variables.");
+      return;
+    }
 
     try {
       const response = await fetch(
@@ -90,7 +97,7 @@ const AddBlogModal = ({ show, onClose, onPost }) => {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
-            "api-key": "8hWstobpA36UxyYbYaVvDqDg045OdhhvNcTXcn0VO1faBm95wqUpJQQJ99BEACHYHv6XJ3w3AAAAACOGwu9c", 
+            "api-key": AZURE_OPENAI_API_KEY,
           },
           body: JSON.stringify({
             messages: [
@@ -165,7 +172,7 @@ ${content}`,
           method: "POST",
           headers: {
             "Content-Type": "application/json",
-            "api-key": "8hWstobpA36UxyYbYaVvDqDg045OdhhvNcTXcn0VO1faBm95wqUpJQQJ99BEACHYHv6XJ3w3AAAAACOGwu9c", 
+            "api-key": AZURE_OPENAI_API_KEY,
           },
           body: JSON.stringify({
             messages: [
