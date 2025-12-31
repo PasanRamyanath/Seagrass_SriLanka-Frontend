@@ -8,6 +8,7 @@ const FloatingIcon = ({ src, style }) => (
   <img className={`absolute w-12 h-12 opacity-50 animate-float z-0 ${style}`} />
 );
 
+
 const About = () => {
   return (
     <div className="min-h-screen  text-gray-800 font-serif px-4 pt-36 pb-24 relative overflow-hidden">
